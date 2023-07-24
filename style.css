@@ -1,0 +1,123 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --medium-grey-opacity: hsla(216, 12%, 54%, 20%);
+  --very-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --star-url: url("./assets/icon-star.svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  margin: 0 20px;
+
+  background-color: var(--very-dark-blue);
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: var(--light-grey);
+  line-height: 25px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 20px;
+
+  min-width: 300px;
+  max-width: 400px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--very-blue),
+    var(--very-dark-blue)
+  );
+
+  border-radius: 20px;
+  padding: 20px 20px;
+}
+
+.star {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--medium-grey-opacity) var(--star-url) no-repeat center;
+}
+
+.content h1 {
+  font-size: 25px;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 50px;
+}
+
+.ratings span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background-color: var(--medium-grey-opacity);
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+}
+
+.ratings span.active {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.ratings span:hover {
+  background-color: var(--light-grey);
+  color: var(--white);
+}
+
+button {
+  height: 45px;
+  border-radius: 40px;
+  border: none;
+
+  background-color: var(--orange);
+  color: var(--white);
+  letter-spacing: 3px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+@media (min-width: 420px) {
+  .ratings span {
+    width: 50px;
+    height: 50px;
+  }
+}
