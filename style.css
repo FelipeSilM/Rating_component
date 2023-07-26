@@ -6,7 +6,7 @@
   --medium-grey-opacity: hsla(216, 12%, 54%, 20%);
   --very-blue: hsl(213, 19%, 18%);
   --very-dark-blue: hsl(216, 12%, 8%);
-  --star-url: url("./assets/icon-star.svg");
+  --star-url: url("../assets/icon-star.svg");
 }
 
 * {
@@ -63,6 +63,11 @@ body * {
   margin-bottom: 20px;
 }
 
+.content.submited h1,
+.content.submited p {
+  text-align: center;
+}
+
 .ratings {
   display: flex;
   justify-content: space-between;
@@ -113,6 +118,28 @@ button {
 button:hover {
   background-color: var(--white);
   color: var(--orange);
+}
+
+.img-container {
+  height: 80px;
+  margin: auto;
+}
+
+.img-container img {
+  height: 100%;
+}
+
+.rate {
+  margin: auto;
+  background-color: var(--medium-grey-opacity);
+  border-radius: 50px;
+
+  padding: 5px 15px;
+}
+
+.rate p {
+  color: var(--orange);
+  line-height: normal;
 }
 
 @media (min-width: 420px) {
