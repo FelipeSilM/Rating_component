@@ -24,34 +24,35 @@
         </p>
       </div>
       <div class="ratings">
-        <span onclick="toggleActive(0)" class="rates">1</span>
-        <span onclick="toggleActive(1)" class="rates">2</span>
-        <span onclick="toggleActive(2)" class="rates">3</span>
-        <span onclick="toggleActive(3)" class="rates">4</span>
-        <span onclick="toggleActive(4)" class="rates">5</span>
+        <span onclick="toggleActive(this)" class="rates">1</span>
+        <span onclick="toggleActive(this)" class="rates">2</span>
+        <span onclick="toggleActive(this)" class="rates">3</span>
+        <span onclick="toggleActive(this)" class="rates">4</span>
+        <span onclick="toggleActive(this)" class="rates">5</span>
       </div>
-      <button onclick="avaliar()">SUBMIT</button>
+      <button onclick="avaliar()" class="">SUBMIT</button>
     </div>
 
     <script>
-      let ratings = document.getElementsByClassName("rates")
+      let ratings = Array.from(document.getElementsByClassName("rates"))
+      let button = document.querySelector("button")
       let value = 0
-      //ratings[0].classList.add("active")
 
       function toggleActive(span) {
-        for (let i = 0; i < ratings.length; i++) {
-          ratings[i].classList.remove("active")
-        }
-        ratings[span].classList.add("active")
-        value = ratings[span].innerHTML
+        ratings.forEach((rate) => {
+          rate.classList.remove("active")
+        })
+        span.classList.add("active")
+        button.classList.add("selected")
+        value = span.innerHTML
       }
 
       function avaliar() {
-        localStorage.setItem("avaliacao", value)
-        window.location.href = "./avaliado.html"
+        if (button.classList.contains("selected")) {
+          localStorage.setItem("avaliacao", value)
+          window.location.href = "./avaliado.html"
+        }
       }
-
-      //avaliado
     </script>
   </body>
 </html>

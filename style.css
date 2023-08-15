@@ -6,7 +6,7 @@
   --medium-grey-opacity: hsla(216, 12%, 54%, 20%);
   --very-blue: hsl(213, 19%, 18%);
   --very-dark-blue: hsl(216, 12%, 8%);
-  --star-url: url("../assets/icon-star.svg");
+  --star-url: url("./assets/icon-star.svg");
 }
 
 * {
@@ -108,14 +108,22 @@ button {
   border-radius: 40px;
   border: none;
 
-  background-color: var(--orange);
-  color: var(--white);
+  background-color: hsla(216, 12%, 54%, 70%);
+  color: hsla(255, 255, 255, 90%);
   letter-spacing: 3px;
-
-  cursor: pointer;
 }
 
-button:hover {
+button.selected {
+  background-color: var(--orange);
+  color: var(--white);
+
+  cursor: pointer;
+
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+}
+
+button.selected:hover {
   background-color: var(--white);
   color: var(--orange);
 }
